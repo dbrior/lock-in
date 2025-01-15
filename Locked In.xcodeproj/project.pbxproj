@@ -7,18 +7,63 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A10AD5D72D35D6F400EA5155 /* ActivityReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10AD5D62D35D6F400EA5155 /* ActivityReportView.swift */; };
+		A10AD5D92D35D75100EA5155 /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10AD5D82D35D75100EA5155 /* LandingPageView.swift */; };
+		A10AD5DB2D35D91600EA5155 /* LockAppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10AD5DA2D35D91600EA5155 /* LockAppsView.swift */; };
+		A10AD5DF2D35F5E900EA5155 /* ApplicationUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10AD5DE2D35F5E900EA5155 /* ApplicationUsage.swift */; };
 		A18B93B12D34EA7E00F06BC5 /* Locked_InApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B93B02D34EA7E00F06BC5 /* Locked_InApp.swift */; };
-		A18B93B32D34EA7E00F06BC5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B93B22D34EA7E00F06BC5 /* ContentView.swift */; };
 		A18B93B52D34EA7F00F06BC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A18B93B42D34EA7F00F06BC5 /* Assets.xcassets */; };
 		A18B93B82D34EA7F00F06BC5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A18B93B72D34EA7F00F06BC5 /* Preview Assets.xcassets */; };
+		A18B93C52D34EF9100F06BC5 /* ActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B93C42D34EF9100F06BC5 /* ActivityReport.swift */; };
+		A18B93C72D34EF9100F06BC5 /* TotalActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B93C62D34EF9100F06BC5 /* TotalActivityReport.swift */; };
+		A18B93C92D34EF9100F06BC5 /* TotalActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B93C82D34EF9100F06BC5 /* TotalActivityView.swift */; };
+		A18B93CE2D34EF9100F06BC5 /* ActivityReport.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = A18B93C22D34EF9100F06BC5 /* ActivityReport.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A18B93DF2D3507FB00F06BC5 /* PiechartReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B93DE2D3507FB00F06BC5 /* PiechartReport.swift */; };
+		A18B93E12D35086400F06BC5 /* PiechartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B93E02D35086400F06BC5 /* PiechartView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A18B93CC2D34EF9100F06BC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A18B93A52D34EA7E00F06BC5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A18B93C12D34EF9100F06BC5;
+			remoteInfo = ActivityReport;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A18B93D22D34EF9100F06BC5 /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+				A18B93CE2D34EF9100F06BC5 /* ActivityReport.appex in Embed ExtensionKit Extensions */,
+			);
+			name = "Embed ExtensionKit Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		A10AD5D62D35D6F400EA5155 /* ActivityReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityReportView.swift; sourceTree = "<group>"; };
+		A10AD5D82D35D75100EA5155 /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
+		A10AD5DA2D35D91600EA5155 /* LockAppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockAppsView.swift; sourceTree = "<group>"; };
+		A10AD5DE2D35F5E900EA5155 /* ApplicationUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationUsage.swift; sourceTree = "<group>"; };
 		A18B93AD2D34EA7E00F06BC5 /* Locked In.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Locked In.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18B93B02D34EA7E00F06BC5 /* Locked_InApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locked_InApp.swift; sourceTree = "<group>"; };
-		A18B93B22D34EA7E00F06BC5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A18B93B42D34EA7F00F06BC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A18B93B72D34EA7F00F06BC5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A18B93C22D34EF9100F06BC5 /* ActivityReport.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = ActivityReport.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A18B93C42D34EF9100F06BC5 /* ActivityReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityReport.swift; sourceTree = "<group>"; };
+		A18B93C62D34EF9100F06BC5 /* TotalActivityReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalActivityReport.swift; sourceTree = "<group>"; };
+		A18B93C82D34EF9100F06BC5 /* TotalActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalActivityView.swift; sourceTree = "<group>"; };
+		A18B93CA2D34EF9100F06BC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A18B93CB2D34EF9100F06BC5 /* ActivityReport.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ActivityReport.entitlements; sourceTree = "<group>"; };
+		A18B93DD2D34FE8100F06BC5 /* Locked In.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Locked In.entitlements"; sourceTree = "<group>"; };
+		A18B93DE2D3507FB00F06BC5 /* PiechartReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiechartReport.swift; sourceTree = "<group>"; };
+		A18B93E02D35086400F06BC5 /* PiechartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiechartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,13 +74,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A18B93BF2D34EF9100F06BC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A10AD5DC2D35E07500EA5155 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				A10AD5D82D35D75100EA5155 /* LandingPageView.swift */,
+				A10AD5D62D35D6F400EA5155 /* ActivityReportView.swift */,
+				A10AD5DA2D35D91600EA5155 /* LockAppsView.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		A10AD5DD2D35F5D700EA5155 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A10AD5DE2D35F5E900EA5155 /* ApplicationUsage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		A18B93A42D34EA7E00F06BC5 = {
 			isa = PBXGroup;
 			children = (
 				A18B93AF2D34EA7E00F06BC5 /* Locked In */,
+				A18B93C32D34EF9100F06BC5 /* ActivityReport */,
 				A18B93AE2D34EA7E00F06BC5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				A18B93AD2D34EA7E00F06BC5 /* Locked In.app */,
+				A18B93C22D34EF9100F06BC5 /* ActivityReport.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -51,8 +123,9 @@
 		A18B93AF2D34EA7E00F06BC5 /* Locked In */ = {
 			isa = PBXGroup;
 			children = (
+				A10AD5DC2D35E07500EA5155 /* OnBoarding */,
+				A18B93DD2D34FE8100F06BC5 /* Locked In.entitlements */,
 				A18B93B02D34EA7E00F06BC5 /* Locked_InApp.swift */,
-				A18B93B22D34EA7E00F06BC5 /* ContentView.swift */,
 				A18B93B42D34EA7F00F06BC5 /* Assets.xcassets */,
 				A18B93B62D34EA7F00F06BC5 /* Preview Content */,
 			);
@@ -67,6 +140,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		A18B93C32D34EF9100F06BC5 /* ActivityReport */ = {
+			isa = PBXGroup;
+			children = (
+				A10AD5DD2D35F5D700EA5155 /* Models */,
+				A18B93C42D34EF9100F06BC5 /* ActivityReport.swift */,
+				A18B93C62D34EF9100F06BC5 /* TotalActivityReport.swift */,
+				A18B93C82D34EF9100F06BC5 /* TotalActivityView.swift */,
+				A18B93DE2D3507FB00F06BC5 /* PiechartReport.swift */,
+				A18B93E02D35086400F06BC5 /* PiechartView.swift */,
+				A18B93CA2D34EF9100F06BC5 /* Info.plist */,
+				A18B93CB2D34EF9100F06BC5 /* ActivityReport.entitlements */,
+			);
+			path = ActivityReport;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,15 +165,34 @@
 				A18B93A92D34EA7E00F06BC5 /* Sources */,
 				A18B93AA2D34EA7E00F06BC5 /* Frameworks */,
 				A18B93AB2D34EA7E00F06BC5 /* Resources */,
+				A18B93D22D34EF9100F06BC5 /* Embed ExtensionKit Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A18B93CD2D34EF9100F06BC5 /* PBXTargetDependency */,
 			);
 			name = "Locked In";
 			productName = "Locked In";
 			productReference = A18B93AD2D34EA7E00F06BC5 /* Locked In.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A18B93C12D34EF9100F06BC5 /* ActivityReport */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A18B93CF2D34EF9100F06BC5 /* Build configuration list for PBXNativeTarget "ActivityReport" */;
+			buildPhases = (
+				A18B93BE2D34EF9100F06BC5 /* Sources */,
+				A18B93BF2D34EF9100F06BC5 /* Frameworks */,
+				A18B93C02D34EF9100F06BC5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ActivityReport;
+			productName = ActivityReport;
+			productReference = A18B93C22D34EF9100F06BC5 /* ActivityReport.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -98,6 +205,9 @@
 				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					A18B93AC2D34EA7E00F06BC5 = {
+						CreatedOnToolsVersion = 15.1;
+					};
+					A18B93C12D34EF9100F06BC5 = {
 						CreatedOnToolsVersion = 15.1;
 					};
 				};
@@ -116,6 +226,7 @@
 			projectRoot = "";
 			targets = (
 				A18B93AC2D34EA7E00F06BC5 /* Locked In */,
+				A18B93C12D34EF9100F06BC5 /* ActivityReport */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +241,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A18B93C02D34EF9100F06BC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -137,12 +255,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A18B93B32D34EA7E00F06BC5 /* ContentView.swift in Sources */,
+				A10AD5D72D35D6F400EA5155 /* ActivityReportView.swift in Sources */,
+				A10AD5D92D35D75100EA5155 /* LandingPageView.swift in Sources */,
+				A10AD5DB2D35D91600EA5155 /* LockAppsView.swift in Sources */,
 				A18B93B12D34EA7E00F06BC5 /* Locked_InApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A18B93BE2D34EF9100F06BC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10AD5DF2D35F5E900EA5155 /* ApplicationUsage.swift in Sources */,
+				A18B93C92D34EF9100F06BC5 /* TotalActivityView.swift in Sources */,
+				A18B93C52D34EF9100F06BC5 /* ActivityReport.swift in Sources */,
+				A18B93E12D35086400F06BC5 /* PiechartView.swift in Sources */,
+				A18B93C72D34EF9100F06BC5 /* TotalActivityReport.swift in Sources */,
+				A18B93DF2D3507FB00F06BC5 /* PiechartReport.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A18B93CD2D34EF9100F06BC5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A18B93C12D34EF9100F06BC5 /* ActivityReport */;
+			targetProxy = A18B93CC2D34EF9100F06BC5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A18B93B92D34EA7F00F06BC5 /* Debug */ = {
@@ -267,8 +408,10 @@
 		A18B93BC2D34EA7F00F06BC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Locked In/Locked In.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Locked In/Preview Content\"";
@@ -280,6 +423,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,8 +440,10 @@
 		A18B93BD2D34EA7F00F06BC5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Locked In/Locked In.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Locked In/Preview Content\"";
@@ -309,6 +455,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,6 +463,60 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Locked-In";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A18B93D02D34EF9100F06BC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ActivityReport/ActivityReport.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8W4WFFJLXX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ActivityReport/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ActivityReport;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Locked-In.ActivityReport";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A18B93D12D34EF9100F06BC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ActivityReport/ActivityReport.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8W4WFFJLXX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ActivityReport/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ActivityReport;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Locked-In.ActivityReport";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -339,6 +540,15 @@
 			buildConfigurations = (
 				A18B93BC2D34EA7F00F06BC5 /* Debug */,
 				A18B93BD2D34EA7F00F06BC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A18B93CF2D34EF9100F06BC5 /* Build configuration list for PBXNativeTarget "ActivityReport" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A18B93D02D34EF9100F06BC5 /* Debug */,
+				A18B93D12D34EF9100F06BC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

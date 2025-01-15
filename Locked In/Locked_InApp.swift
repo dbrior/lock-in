@@ -6,12 +6,32 @@
 //
 
 import SwiftUI
+import Observation
+import DeviceActivity
+import ManagedSettings
+
+@Observable 
+class AppModel {
+    var store = ManagedSettingsStore()
+    var lockedApplications: Set<ApplicationToken> = []
+    var applicationActivity: [Application:TimeInterval] = [:]
+}
+
+extension AppModel {
+    static var sampleData: AppModel = AppModel()
+}
 
 @main
-struct Locked_InApp: App {
+struct Locked_In: App {
+    @State private var appModel = AppModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LandingPageView()
+                .onAppear {
+                    appModel.lockedApplications = appModel.store.shield.applications ?? []
+                }
+                .environment(appModel)
         }
     }
 }
