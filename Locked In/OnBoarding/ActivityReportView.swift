@@ -17,12 +17,28 @@ struct ActivityReportView: View {
     @State private var context: DeviceActivityReport.Context = .pieChart
     @State private var filter: DeviceActivityFilter = DeviceActivityFilter(segment: .daily(during: DateInterval(start: Calendar.current.date(byAdding: .day, value: -7, to: Date())!, end: Date())))
     
+    @State var isLoading: Bool = true
+    
     var body: some View {
         VStack {
             Text("Your Screentime")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-            DeviceActivityReport(context, filter: filter)
+            ZStack {
+                if isLoading {
+                    ProgressView()
+                }
+                DeviceActivityReport(context, filter: filter)
+                    .task {
+                        do {
+                            try await Task.sleep(for: .seconds(2))
+                            isLoading = false
+                        } catch {
+                            print("Error: \(error)")
+                            isLoading = false
+                        }
+                    }
+            }
             NavigationLink("I can do better", destination: LockAppsView())
             .buttonStyle(.borderedProminent)
         }

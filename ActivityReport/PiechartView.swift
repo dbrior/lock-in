@@ -20,6 +20,8 @@ struct ChartSlice {
 struct PiechartView: View {
     struct Configuration {
         let applicationUsages: [ApplicationUsage]
+        
+        static let loadingConfig = Configuration(applicationUsages: [])
     }
     
     let configuration: Configuration
@@ -66,33 +68,36 @@ struct PiechartView: View {
 
     
     var body: some View {
-        VStack {
-            Chart() {
-                ForEach(chartSlices, id: \.name) {item in
-                    SectorMark(
-                        angle: .value("Time", item.timeInterval),
-                        innerRadius: .ratio(0.618),
-                        angularInset: 0.5
-                    )
-                    .foregroundStyle(by: .value("Application", item.name))
-                    .position(by: .value("TimeInterval", item.timeInterval))
-                }
-            }
-            .scaledToFit()
-            .chartLegend(.hidden)
-        }
-        
-        List() {
-            ForEach(chartSlices, id: \.name) {item in
-                HStack {
-                    if let applicationToken: ApplicationToken = item.application?.token {
-                        Label(applicationToken)
-                    } else {
-                        Label("Other", systemImage: "ellipsis")
+        if configuration.applicationUsages.isEmpty {
+            ProgressView()
+        } else {
+            VStack {
+                Chart() {
+                    ForEach(chartSlices, id: \.name) {item in
+                        SectorMark(
+                            angle: .value("Time", item.timeInterval),
+                            innerRadius: .ratio(0.618),
+                            angularInset: 0.5
+                        )
+                        .foregroundStyle(by: .value("Application", item.name))
+                        .position(by: .value("TimeInterval", item.timeInterval))
                     }
-//                    Text("\(item.name)")
-                    Spacer()
-                    Text(formatTimeInterval(timeInterval: item.timeInterval))
+                }
+                .scaledToFit()
+                .chartLegend(.hidden)
+            }
+            
+            List() {
+                ForEach(chartSlices, id: \.name) {item in
+                    HStack {
+                        if let applicationToken: ApplicationToken = item.application?.token {
+                            Label(applicationToken)
+                        } else {
+                            Label("Other", systemImage: "ellipsis")
+                        }
+                        Spacer()
+                        Text(formatTimeInterval(timeInterval: item.timeInterval))
+                    }
                 }
             }
         }
