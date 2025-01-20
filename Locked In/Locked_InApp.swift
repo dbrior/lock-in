@@ -15,6 +15,12 @@ class AppModel {
     var store = ManagedSettingsStore()
     var lockedApplications: Set<ApplicationToken> = []
     var applicationActivity: [Application:TimeInterval] = [:]
+    
+    let domain = Bundle.main.bundleIdentifier!
+    
+    init() {
+        self.lockedApplications = self.store.shield.applications ?? []
+    }
 }
 
 extension AppModel {
@@ -27,11 +33,8 @@ struct Locked_In: App {
     
     var body: some Scene {
         WindowGroup {
-            LandingPageView()
-                .onAppear {
-                    appModel.lockedApplications = appModel.store.shield.applications ?? []
-                }
-                .environment(appModel)
+            ContentView()
+            .environment(appModel)
         }
     }
 }

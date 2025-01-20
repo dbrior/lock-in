@@ -36,10 +36,10 @@ struct LandingPageView: View {
                 
                 Spacer()
                 
-                NavigationLink("Hell Yeah", destination: ActivityReportView())
-                .buttonStyle(.borderedProminent)
+//                NavigationLink("Hell Yeah", destination: ActivityReportView())
+//                .buttonStyle(.borderedProminent)
                 
-                Spacer()
+//                Spacer()
             }
             
         }

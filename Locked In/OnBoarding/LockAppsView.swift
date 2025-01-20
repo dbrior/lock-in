@@ -11,6 +11,7 @@ import ManagedSettings
 
 struct LockAppsView: View {
     @Environment(AppModel.self) var appModel: AppModel
+    @AppStorage("shouldShowOnboarding") var shouldShowOnboarding: Bool = false
     
     @State var applicationsToLock: Set<ApplicationToken> = []
     
@@ -60,6 +61,8 @@ struct LockAppsView: View {
                     appModel.store.shield.applications = allLocks
                     
                     applicationsToLock = []
+                    
+                    shouldShowOnboarding = false
                 } label: {
                     Text("Lock em down")
                 }
@@ -76,13 +79,6 @@ struct LockAppsView: View {
                 .buttonStyle(.bordered)
                 Spacer()
             }
-            
-            
-                
-//            NavigationLink("I'm ready", destination: LockAppsView())
-//                .buttonStyle(.borderedProminent)
-//                .disabled(!showButton)
-            
         }
         .padding()
     }

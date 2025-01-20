@@ -39,8 +39,8 @@ struct ActivityReportView: View {
                         }
                     }
             }
-            NavigationLink("I can do better", destination: LockAppsView())
-            .buttonStyle(.borderedProminent)
+//            NavigationLink("I can do better", destination: LockAppsView())
+//            .buttonStyle(.borderedProminent)
         }
         .padding()
     }

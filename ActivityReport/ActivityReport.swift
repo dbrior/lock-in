@@ -12,6 +12,9 @@ import SwiftUI
 struct ActivityReport: DeviceActivityReportExtension {
     
     var body: some DeviceActivityReportScene {
+        TotalActivityReport { configuration in
+            TotalActivityView(totalActivity: configuration)
+        }
         PiechartReport { configuration in
             PiechartView(configuration: configuration)
         }
