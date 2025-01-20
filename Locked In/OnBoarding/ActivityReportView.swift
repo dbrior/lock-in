@@ -13,36 +13,62 @@ extension DeviceActivityReport.Context {
 }
 
 struct ActivityReportView: View {
+    @State var isLoading: Bool = true
+    @State var dayRange: Int = 7
+    
     // Activity Report
     @State private var context: DeviceActivityReport.Context = .pieChart
-    @State private var filter: DeviceActivityFilter = DeviceActivityFilter(segment: .daily(during: DateInterval(start: Calendar.current.date(byAdding: .day, value: -7, to: Date())!, end: Date())))
-    
-    @State var isLoading: Bool = true
+    private var dateInterval: DateInterval {
+        return DateInterval(start: Calendar.current.date(byAdding: .day, value: -dayRange, to: Date())!, end: Date())
+    }
+    private var filter: DeviceActivityFilter {
+        return DeviceActivityFilter(
+            segment: .daily(
+                during: dateInterval
+            )
+        )
+    }
     
     var body: some View {
         VStack {
-            Text("Your Screentime")
-                .font(.largeTitle)
-                .fontWeight(.bold)
+            HStack {
+                Text("Screentime")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                Spacer()
+            }
+            
+            Picker("", selection: $dayRange) {
+                Text("1 Day")
+                    .tag(1)
+                Text("7 Days")
+                    .tag(7)
+                Text("30 Days")
+                    .tag(30)
+            }
+            .pickerStyle(.segmented)
+            .labelsHidden()
+            
             ZStack {
-                if isLoading {
-                    ProgressView()
-                }
+//                if isLoading {
+//                    ProgressView()
+//                }
                 DeviceActivityReport(context, filter: filter)
-                    .task {
-                        do {
-                            try await Task.sleep(for: .seconds(2))
-                            isLoading = false
-                        } catch {
-                            print("Error: \(error)")
-                            isLoading = false
-                        }
-                    }
+//                    .padding()
+//                    .task {
+//                        do {
+//                            try await Task.sleep(for: .seconds(2))
+//                            isLoading = false
+//                        } catch {
+//                            print("Error: \(error)")
+//                            isLoading = false
+//                        }
+//                    }
             }
 //            NavigationLink("I can do better", destination: LockAppsView())
 //            .buttonStyle(.borderedProminent)
         }
-        .padding()
+//        .padding()
     }
 }
 

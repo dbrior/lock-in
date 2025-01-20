@@ -30,6 +30,7 @@ struct ContentView: View {
         .fullScreenCover(isPresented: $shouldShowOnboarding) {
             OnboardingView()
         }
+        .padding()
     }
 }
 
