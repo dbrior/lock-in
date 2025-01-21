@@ -35,5 +35,8 @@ struct ContentView: View {
 }
 
 #Preview {
+    var previewModel: AppModel = AppModel()
+    
     ContentView()
+        .environment(previewModel)
 }
