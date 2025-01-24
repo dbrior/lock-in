@@ -13,13 +13,15 @@ extension DeviceActivityReport.Context {
 }
 
 struct ActivityReportView: View {
+    let calendar = Calendar.current
+    
     @State var isLoading: Bool = true
-    @State var dayRange: Int = 7
+    @State var selectedDateStart: Date?
     
     // Activity Report
     @State private var context: DeviceActivityReport.Context = .pieChart
     private var dateInterval: DateInterval {
-        return DateInterval(start: Calendar.current.date(byAdding: .day, value: -dayRange, to: Date())!, end: Date())
+        return DateInterval(start: selectedDateStart ?? Date.now, end: Date())
     }
     private var filter: DeviceActivityFilter {
         return DeviceActivityFilter(
@@ -38,16 +40,19 @@ struct ActivityReportView: View {
                 Spacer()
             }
             
-            Picker("", selection: $dayRange) {
-                Text("1 Day")
-                    .tag(1)
+            Picker("", selection: $selectedDateStart) {
+                Text("Today")
+                    .tag(calendar.startOfDay(for: Date.now))
                 Text("7 Days")
-                    .tag(7)
+                    .tag(calendar.startOfDay(for: Calendar.current.date(byAdding: .day, value: -7, to: Date())!))
                 Text("30 Days")
-                    .tag(30)
+                    .tag(calendar.startOfDay(for: Calendar.current.date(byAdding: .day, value: -30, to: Date())!))
             }
             .pickerStyle(.segmented)
             .labelsHidden()
+            .onAppear {
+                selectedDateStart = calendar.startOfDay(for: Date.now)
+            }
             
             ZStack {
 //                if isLoading {
@@ -68,6 +73,7 @@ struct ActivityReportView: View {
 //            NavigationLink("I can do better", destination: LockAppsView())
 //            .buttonStyle(.borderedProminent)
         }
+        .sensoryFeedback(.impact, trigger: selectedDateStart)
 //        .padding()
     }
 }

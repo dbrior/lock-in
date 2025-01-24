@@ -111,6 +111,19 @@ struct PiechartView: View {
         return chartSelection == nil ? formatTimeInterval(timeInterval: totalTime) : formatTimeInterval(timeInterval: chartSelection!.timeInterval)
     }
     
+    var sliceColors: [Color] = [
+        .blue,
+        .green,
+        .orange,
+        .red,
+        .purple,
+        .yellow,
+        .pink,
+        .teal,
+        .brown,
+        .gray
+    ]
+    
 //    @State var plotData: [ChartSlice] = Array(
 //        repeating: ChartSlice(name:"", timeInterval: TimeInterval(0), application: nil),
 //        count: 10
@@ -124,6 +137,13 @@ struct PiechartView: View {
         
         return formatter.string(from: timeInterval) ?? "Unknown Time"
     }
+    
+    private func colorForCategory(_ category: String) -> Color {
+        // Use a consistent method to assign colors
+        let hashValue = category.hash
+        let hue = Double(abs(hashValue % 360)) / 360.0
+        return Color(hue: hue, saturation: 0.8, brightness: 0.8)
+    }
 
     
     var body: some View {
@@ -131,7 +151,11 @@ struct PiechartView: View {
             ProgressView()
         } else {
             VStack {
-                Chart(plotData, id: \.id) { item in
+                Chart(0..<plotData.count, id: \.self) { idx in
+                    let item = plotData[idx]
+                    
+                    var sliceColor = sliceColors[idx % sliceColors.count]
+                    
                     if item.name != "Other" {
                         SectorMark(
                             angle: .value("Time", item.timeInterval),
@@ -141,7 +165,7 @@ struct PiechartView: View {
                         )
                         .opacity(shownChartSelection == item || shownChartSelection == nil ? 1.0 : 0.75)
                         .cornerRadius(5)
-                        .foregroundStyle(by: .value("Application", item.name))
+                        .foregroundStyle(sliceColor)
                     } else {
                         SectorMark(
                             angle: .value("Time", item.timeInterval),
@@ -198,7 +222,10 @@ struct PiechartView: View {
                 Spacer()
                 
                 List() {
-                    ForEach(plotData, id: \.name) {item in
+                    ForEach(0..<plotData.count, id: \.self) { idx in
+                        let item = plotData[idx]
+                        
+                        let sliceColor = sliceColors[idx % sliceColors.count]
                         HStack {
                             if let applicationToken: ApplicationToken = item.application?.token {
                                 Label(applicationToken)
@@ -207,6 +234,10 @@ struct PiechartView: View {
                             }
                             Spacer()
                             Text(formatTimeInterval(timeInterval: item.timeInterval))
+                            Circle()
+                                .foregroundStyle(item.name == "Other" ? .gray : sliceColor)
+                                .frame(width: 10, height: 10)
+                                .padding(.leading)
                         }
                     }
                 }

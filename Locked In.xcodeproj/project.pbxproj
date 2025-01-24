@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,16 @@
 		A18B93E12D35086400F06BC5 /* PiechartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B93E02D35086400F06BC5 /* PiechartView.swift */; };
 		A1AA82A82D3DE19700672789 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AA82A72D3DE19700672789 /* ContentView.swift */; };
 		A1AA82AA2D3DE80900672789 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AA82A92D3DE80900672789 /* OnboardingView.swift */; };
+		A1AA82AC2D401D7600672789 /* TrackedAppsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AA82AB2D401D7600672789 /* TrackedAppsCardView.swift */; };
+		A1AA82B62D4195B600672789 /* DeviceActivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1AA82B52D4195B600672789 /* DeviceActivity.framework */; };
+		A1AA82BE2D4195B600672789 /* ActivityMonitor.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A1AA82B32D4195B600672789 /* ActivityMonitor.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A1AA82C62D41B22600672789 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AA82C52D41B22200672789 /* AppModel.swift */; };
+		A1AA82C72D41B27300672789 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AA82C52D41B22200672789 /* AppModel.swift */; };
+		A1AA82CB2D4211D700672789 /* LockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AA82CA2D4211C100672789 /* LockSession.swift */; };
+		A1AA82CC2D4211D700672789 /* LockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AA82CA2D4211C100672789 /* LockSession.swift */; };
+		A1AA82CE2D421CE100672789 /* SessionHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AA82CD2D421CE100672789 /* SessionHistoryView.swift */; };
+		A1AA82D02D43546100672789 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AA82CF2D43546100672789 /* SplashScreen.swift */; };
+		A1AA82D22D4371A300672789 /* LockSessionBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AA82D12D4371A300672789 /* LockSessionBarChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +42,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = A18B93C12D34EF9100F06BC5;
 			remoteInfo = ActivityReport;
+		};
+		A1AA82BC2D4195B600672789 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A18B93A52D34EA7E00F06BC5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1AA82B22D4195B600672789;
+			remoteInfo = ActivityMonitor;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -45,6 +62,17 @@
 				A18B93CE2D34EF9100F06BC5 /* ActivityReport.appex in Embed ExtensionKit Extensions */,
 			);
 			name = "Embed ExtensionKit Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1AA82C32D4195B600672789 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A1AA82BE2D4195B600672789 /* ActivityMonitor.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -70,7 +98,29 @@
 		A18B93E02D35086400F06BC5 /* PiechartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiechartView.swift; sourceTree = "<group>"; };
 		A1AA82A72D3DE19700672789 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A1AA82A92D3DE80900672789 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		A1AA82AB2D401D7600672789 /* TrackedAppsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedAppsCardView.swift; sourceTree = "<group>"; };
+		A1AA82B32D4195B600672789 /* ActivityMonitor.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ActivityMonitor.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1AA82B52D4195B600672789 /* DeviceActivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceActivity.framework; path = System/Library/Frameworks/DeviceActivity.framework; sourceTree = SDKROOT; };
+		A1AA82C52D41B22200672789 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		A1AA82CA2D4211C100672789 /* LockSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockSession.swift; sourceTree = "<group>"; };
+		A1AA82CD2D421CE100672789 /* SessionHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionHistoryView.swift; sourceTree = "<group>"; };
+		A1AA82CF2D43546100672789 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		A1AA82D12D4371A300672789 /* LockSessionBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockSessionBarChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A1AA82BF2D4195B600672789 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A1AA82B22D4195B600672789 /* ActivityMonitor */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A1AA82B72D4195B600672789 /* ActivityMonitor */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (A1AA82BF2D4195B600672789 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ActivityMonitor; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A18B93AA2D34EA7E00F06BC5 /* Frameworks */ = {
@@ -87,19 +137,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A1AA82B02D4195B600672789 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1AA82B62D4195B600672789 /* DeviceActivity.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A10AD5DC2D35E07500EA5155 /* OnBoarding */ = {
-			isa = PBXGroup;
-			children = (
-				A10AD5D82D35D75100EA5155 /* LandingPageView.swift */,
-				A10AD5D62D35D6F400EA5155 /* ActivityReportView.swift */,
-				A10AD5DA2D35D91600EA5155 /* LockAppsView.swift */,
-			);
-			path = OnBoarding;
-			sourceTree = "<group>";
-		};
 		A10AD5DD2D35F5D700EA5155 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +161,8 @@
 			children = (
 				A18B93AF2D34EA7E00F06BC5 /* Locked In */,
 				A18B93C32D34EF9100F06BC5 /* ActivityReport */,
+				A1AA82B72D4195B600672789 /* ActivityMonitor */,
+				A1AA82B42D4195B600672789 /* Frameworks */,
 				A18B93AE2D34EA7E00F06BC5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -122,6 +172,7 @@
 			children = (
 				A18B93AD2D34EA7E00F06BC5 /* Locked In.app */,
 				A18B93C22D34EF9100F06BC5 /* ActivityReport.appex */,
+				A1AA82B32D4195B600672789 /* ActivityMonitor.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,12 +180,11 @@
 		A18B93AF2D34EA7E00F06BC5 /* Locked In */ = {
 			isa = PBXGroup;
 			children = (
-				A10AD5DC2D35E07500EA5155 /* OnBoarding */,
+				A1AA82C92D41BD8B00672789 /* Models */,
+				A1AA82C82D41BD8400672789 /* Views */,
 				A18B93DD2D34FE8100F06BC5 /* Locked In.entitlements */,
 				A18B93B02D34EA7E00F06BC5 /* Locked_InApp.swift */,
 				A1AA82A72D3DE19700672789 /* ContentView.swift */,
-				A1AA82A92D3DE80900672789 /* OnboardingView.swift */,
-				A10AD5E12D3DA6E200EA5155 /* DebugControlsView.swift */,
 				A18B93B42D34EA7F00F06BC5 /* Assets.xcassets */,
 				A18B93B62D34EA7F00F06BC5 /* Preview Content */,
 			);
@@ -164,6 +214,39 @@
 			path = ActivityReport;
 			sourceTree = "<group>";
 		};
+		A1AA82B42D4195B600672789 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1AA82B52D4195B600672789 /* DeviceActivity.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1AA82C82D41BD8400672789 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A10AD5D62D35D6F400EA5155 /* ActivityReportView.swift */,
+				A10AD5DA2D35D91600EA5155 /* LockAppsView.swift */,
+				A1AA82AB2D401D7600672789 /* TrackedAppsCardView.swift */,
+				A10AD5E12D3DA6E200EA5155 /* DebugControlsView.swift */,
+				A10AD5D82D35D75100EA5155 /* LandingPageView.swift */,
+				A1AA82A92D3DE80900672789 /* OnboardingView.swift */,
+				A1AA82CD2D421CE100672789 /* SessionHistoryView.swift */,
+				A1AA82D12D4371A300672789 /* LockSessionBarChartView.swift */,
+				A1AA82CF2D43546100672789 /* SplashScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A1AA82C92D41BD8B00672789 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A1AA82CA2D4211C100672789 /* LockSession.swift */,
+				A1AA82C52D41B22200672789 /* AppModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,11 +258,13 @@
 				A18B93AA2D34EA7E00F06BC5 /* Frameworks */,
 				A18B93AB2D34EA7E00F06BC5 /* Resources */,
 				A18B93D22D34EF9100F06BC5 /* Embed ExtensionKit Extensions */,
+				A1AA82C32D4195B600672789 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				A18B93CD2D34EF9100F06BC5 /* PBXTargetDependency */,
+				A1AA82BD2D4195B600672789 /* PBXTargetDependency */,
 			);
 			name = "Locked In";
 			productName = "Locked In";
@@ -203,6 +288,28 @@
 			productReference = A18B93C22D34EF9100F06BC5 /* ActivityReport.appex */;
 			productType = "com.apple.product-type.extensionkit-extension";
 		};
+		A1AA82B22D4195B600672789 /* ActivityMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1AA82C02D4195B600672789 /* Build configuration list for PBXNativeTarget "ActivityMonitor" */;
+			buildPhases = (
+				A1AA82AF2D4195B600672789 /* Sources */,
+				A1AA82B02D4195B600672789 /* Frameworks */,
+				A1AA82B12D4195B600672789 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A1AA82B72D4195B600672789 /* ActivityMonitor */,
+			);
+			name = ActivityMonitor;
+			packageProductDependencies = (
+			);
+			productName = ActivityMonitor;
+			productReference = A1AA82B32D4195B600672789 /* ActivityMonitor.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -210,7 +317,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1510;
+				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					A18B93AC2D34EA7E00F06BC5 = {
@@ -218,6 +325,9 @@
 					};
 					A18B93C12D34EF9100F06BC5 = {
 						CreatedOnToolsVersion = 15.1;
+					};
+					A1AA82B22D4195B600672789 = {
+						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
@@ -236,6 +346,7 @@
 			targets = (
 				A18B93AC2D34EA7E00F06BC5 /* Locked In */,
 				A18B93C12D34EF9100F06BC5 /* ActivityReport */,
+				A1AA82B22D4195B600672789 /* ActivityMonitor */,
 			);
 		};
 /* End PBXProject section */
@@ -257,6 +368,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A1AA82B12D4195B600672789 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -264,13 +382,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1AA82D02D43546100672789 /* SplashScreen.swift in Sources */,
 				A10AD5D72D35D6F400EA5155 /* ActivityReportView.swift in Sources */,
 				A10AD5D92D35D75100EA5155 /* LandingPageView.swift in Sources */,
 				A1AA82A82D3DE19700672789 /* ContentView.swift in Sources */,
+				A1AA82CE2D421CE100672789 /* SessionHistoryView.swift in Sources */,
+				A1AA82AC2D401D7600672789 /* TrackedAppsCardView.swift in Sources */,
+				A1AA82C62D41B22600672789 /* AppModel.swift in Sources */,
 				A10AD5DB2D35D91600EA5155 /* LockAppsView.swift in Sources */,
 				A10AD5E22D3DA6E200EA5155 /* DebugControlsView.swift in Sources */,
 				A18B93B12D34EA7E00F06BC5 /* Locked_InApp.swift in Sources */,
 				A1AA82AA2D3DE80900672789 /* OnboardingView.swift in Sources */,
+				A1AA82D22D4371A300672789 /* LockSessionBarChartView.swift in Sources */,
+				A1AA82CB2D4211D700672789 /* LockSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +411,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A1AA82AF2D4195B600672789 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1AA82C72D41B27300672789 /* AppModel.swift in Sources */,
+				A1AA82CC2D4211D700672789 /* LockSession.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -294,6 +427,11 @@
 			isa = PBXTargetDependency;
 			target = A18B93C12D34EF9100F06BC5 /* ActivityReport */;
 			targetProxy = A18B93CC2D34EF9100F06BC5 /* PBXContainerItemProxy */;
+		};
+		A1AA82BD2D4195B600672789 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1AA82B22D4195B600672789 /* ActivityMonitor */;
+			targetProxy = A1AA82BC2D4195B600672789 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -433,8 +571,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -465,8 +604,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -492,7 +632,7 @@
 				INFOPLIST_FILE = ActivityReport/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ActivityReport;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -519,7 +659,7 @@
 				INFOPLIST_FILE = ActivityReport/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ActivityReport;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -527,6 +667,58 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Locked-In.ActivityReport";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A1AA82C12D4195B600672789 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ActivityMonitor/ActivityMonitor.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8W4WFFJLXX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ActivityMonitor/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ActivityMonitor;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Locked-In.ActivityMonitor";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1AA82C22D4195B600672789 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ActivityMonitor/ActivityMonitor.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8W4WFFJLXX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ActivityMonitor/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ActivityMonitor;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Locked-In.ActivityMonitor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -561,6 +753,15 @@
 			buildConfigurations = (
 				A18B93D02D34EF9100F06BC5 /* Debug */,
 				A18B93D12D34EF9100F06BC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1AA82C02D4195B600672789 /* Build configuration list for PBXNativeTarget "ActivityMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1AA82C12D4195B600672789 /* Debug */,
+				A1AA82C22D4195B600672789 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
