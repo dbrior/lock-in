@@ -10,7 +10,8 @@ import SwiftData
 import Charts
 
 struct SessionHistoryView: View {
-    @State private var startDate: Date = Calendar.current.startOfDay(for: .now)
+    @State private var startDate: Date = Calendar.current.startOfDay(for: Calendar.current.date(byAdding: .day, value: -6, to: .now)!) // 7 Days ago
+    var endDate: Date = Calendar.current.startOfDay(for: Calendar.current.date(byAdding: .day, value: 1, to: .now)!) - 1.0 // 23:59 for current day
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var formatter = DateFormatter()
@@ -37,14 +38,14 @@ struct SessionHistoryView: View {
                 Text("Today")
                     .tag(Calendar.current.startOfDay(for: .now))
                 Text("7 Days")
-                    .tag(Calendar.current.startOfDay(for: Calendar.current.date(byAdding: .day, value: -7, to: .now)!))
+                    .tag(Calendar.current.startOfDay(for: Calendar.current.date(byAdding: .day, value: -6, to: .now)!))
                 Text("30 Days")
-                    .tag(Calendar.current.startOfDay(for: Calendar.current.date(byAdding: .day, value: -30, to: .now)!))
+                    .tag(Calendar.current.startOfDay(for: Calendar.current.date(byAdding: .day, value: -29, to: .now)!))
             }
             .pickerStyle(.segmented)
             .labelsHidden()
             
-            LockSessionBarChartView(startDate: startDate, endDate: Calendar.current.date(byAdding: .day, value: 1, to: .now)! - 1.0)
+            LockSessionBarChartView(startDate: startDate, endDate: endDate)
             
 //            Button("Clear sessions") {
 //                do {

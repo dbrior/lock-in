@@ -139,7 +139,7 @@ struct TrackedAppsCardView : View {
     var body : some View {
         VStack {
             HStack {
-                Text("Tracked apps:")
+                Text("Apps to lock:")
                     .font(.headline)
                 Spacer()
                 Button {
