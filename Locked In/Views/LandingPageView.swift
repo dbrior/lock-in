@@ -6,10 +6,8 @@
 //
 
 import SwiftUI
-import FamilyControls
 
 struct LandingPageView: View {
-    let center = AuthorizationCenter.shared
     
     var body: some View {
         NavigationStack {
@@ -18,15 +16,6 @@ struct LandingPageView: View {
                 
                 Text("Ready to lock in?")
                     .font(.largeTitle.lowercaseSmallCaps())
-                    .onAppear {
-                        Task {
-                            do {
-                                try await center.requestAuthorization(for: .individual)
-                            } catch {
-                                print("Failed to enroll Aniyah with error: \(error)")
-                            }
-                        }
-                    }
                 
                 Spacer()
                 

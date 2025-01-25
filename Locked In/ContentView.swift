@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FamilyControls
 import ManagedSettings
 
 struct ContentView: View {
@@ -40,6 +41,21 @@ struct ContentView: View {
         }
         .padding()
         .onAppear {
+            // Gett FamilyControls authorization
+            Task {
+                do {
+                    try await AuthorizationCenter.shared.requestAuthorization(for: .individual)
+                } catch {
+                    print("Failed to enroll Aniyah with error: \(error)")
+                }
+            }
+            
+            // Force dark mode
+            let appearance = UITabBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            UITabBar.appearance().standardAppearance = appearance
+            UITabBar.appearance().scrollEdgeAppearance = appearance
+            
 //            // Clear UserDefaults
 //            let domain = Bundle.main.bundleIdentifier!
 //            UserDefaults.standard.removePersistentDomain(forName: domain)
@@ -90,13 +106,6 @@ struct ContentView: View {
 //                
 //                context.insert(newEntry)
 //            }
-            
-            
-            // Force dark mode
-            let appearance = UITabBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            UITabBar.appearance().standardAppearance = appearance
-            UITabBar.appearance().scrollEdgeAppearance = appearance
         }
     }
 }
